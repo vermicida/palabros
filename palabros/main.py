@@ -1,8 +1,9 @@
 import typer
 
-from palabros import business, console
+from palabros import business, console, database
 from palabros.errors import DatabaseError, GameError
 
+database.init()
 app = typer.Typer()
 
 
