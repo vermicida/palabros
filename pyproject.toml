@@ -25,7 +25,7 @@ classifiers = [
 ]
 
 [tool.poetry.scripts]
-proteo = "palabros.main:app"
+palabros = "palabros.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.8"
