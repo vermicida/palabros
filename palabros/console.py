@@ -5,6 +5,7 @@ from rich.console import Console
 from rich.padding import Padding
 from rich.table import Table, box
 
+from palabros.business import WORD_LENGTH
 from palabros.schemas import Attempt, Game
 
 
@@ -34,6 +35,21 @@ def _generate_attempt_row(attempt: Attempt) -> List[Padding]:
     ]
 
 
+def _generate_empty_row(cols: int = WORD_LENGTH) -> List[str]:
+
+    """
+    Generate and empty table row.
+
+    Args:
+        cols: The number of columns.
+
+    Returns:
+        A list of `rich.padding.Padding` instances.
+    """
+
+    return [Padding("", 1) for _ in range(cols)]
+
+
 def _create_table(game: Game) -> Table:
 
     """
@@ -61,6 +77,9 @@ def _create_table(game: Game) -> Table:
 
     for attempt in game.attempts:
         table.add_row(*_generate_attempt_row(attempt))
+
+    for _ in range(game.get_attempts_left()):
+        table.add_row(*_generate_empty_row())
 
     return table
 
@@ -108,7 +127,7 @@ def print_result(game: Game) -> None:
     message = (
         f"¡Bien hecho! Siguiente palabra en [bold]{_get_countdown()}[/]."
         if game.any_match()
-        else f"¡Has fallado! Te queda(n) [bold]{game.get_attempts_left()}[/] intento(s)."
+        else f"¡Has fallado! Te quedan [bold]{game.get_attempts_left()}[/] intentos."
         if game.any_attempt_left()
         else f"¡Tenías que acertar [bold]{game.word.upper()}[/]! Siguiente palabra en [bold]{_get_countdown()}[/]."
     )
