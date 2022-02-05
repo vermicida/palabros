@@ -2,7 +2,9 @@
 
 Esto no es más que un CLI inspirado en [Wordle ES](https://wordle.danielfrg.com/), que a su vez es una adaptación de [Wordle](https://www.powerlanguage.co.uk/wordle/). No hay mucho de original con **palabros**, más allá de lo _sexy friki_ de jugar a través de la terminal.
 
-![palabros screenshot](./assets/screenshot.png)
+![palabros screenshot](https://rawcdn.githack.com/vermicida/palabros/4ab0e73a58113195ca8c4e71698ceb832388f01d/assets/screenshot.png)
+
+Puedes leer el artículo [Creando un Wordle para consola](https://medium.com/@vermicida/creando-un-wordle-para-consola-b284a6ad10a0) de Medium para conocer con algo más de detalle cómo planteé el desarrollo de **palabros**.
 
 ## Cómo jugar
 
@@ -23,10 +25,10 @@ palabros play coche
 Al ejecutar el comando pueden darse las siguientes opciones:
 
 - Si es la primera ejecución del día, cuenta como primer intento de adivinar la palabra semilla
-- Si no es la primera ejecución del día, cuenta como un intento sucesivo de adivinar la palabra semilla -hasta un total de 5 intentos-
+- Si no es la primera ejecución del día, cuenta como un intento sucesivo de adivinar la palabra semilla -hasta un total de 6 intentos-
 - Si la palabra semilla se adivinó, o bien no se adivinó pero se consumió el número de intentos, se mostrará una cuenta atrás a cumplir para que se genere una nueva palabra semilla y, por tanto, se pueda volver a jugar
 
-Como resumen: puedes ejecutar `palabros play` cuantas veces quieras, pero solo las 5 primeras del día cuentan como intentos de adivinar la palabra semilla.
+Como resumen: puedes ejecutar `palabros play` cuantas veces quieras, pero solo las 6 primeras del día cuentan como intentos de adivinar la palabra semilla.
 
 Si le das al coco lo suficiente y lo combinas con un poco de suerte, darás con la palabra semilla :-)
 

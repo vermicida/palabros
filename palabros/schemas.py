@@ -39,7 +39,7 @@ class Game:
     word: str
     date: int
     attempts: List[Attempt] = field(default_factory=list)
-    max_attempts: int = 5
+    max_attempts: int = 6
 
     def any_match(self) -> bool:
 

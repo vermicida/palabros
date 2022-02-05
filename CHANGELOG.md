@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.4] - 2022-02-05
+
+### Changed
+
+- Increase the available attempts per game to 6.
+
 ## [0.0.3] - 2022-02-03
 
 ### Added
