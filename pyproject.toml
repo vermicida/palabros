@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "palabros"
-version = "0.0.4"
+version = "0.0.5"
 description = "Este CLI no es más que clon de Wordle en español"
 license = "MIT"
 authors = ["Diego Herrera <vermicida@gmail.com>"]
