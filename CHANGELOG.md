@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.5] - 2022-02-06
+
+### Changed
+
+- The dictionary has been rebuilt from scratch using 3.750 words from the Real Academia Española's [Most common forms in the corpus of contemporary Spanish](https://corpus.rae.es/lfrecuencias.html). Issue [#2](https://github.com/vermicida/palabros/issues/2) by [@iknite](https://github.com/iknite).
+
 ## [0.0.4] - 2022-02-05
 
 ### Changed
