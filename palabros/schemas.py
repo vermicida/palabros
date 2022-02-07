@@ -37,7 +37,7 @@ class Game:
 
     id: int
     word: str
-    date: int
+    date: str
     attempts: List[Attempt] = field(default_factory=list)
     max_attempts: int = 6
 

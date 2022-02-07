@@ -1,8 +1,8 @@
-name: Push to PyPI
+name: Push to TestPyPI
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches:
+      - develop
 jobs:
   build-then-publish:
     runs-on: ubuntu-latest
@@ -14,5 +14,7 @@ jobs:
         with:
           python_version: "3.8.5"
           poetry_version: "==1.1.11"
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
+          pypi_token: ${{ secrets.TESTPYPI_TOKEN }}
+          repository_name: "testpypi"
+          repository_url: "https://test.pypi.org/legacy/"
           build_format: "wheel"
