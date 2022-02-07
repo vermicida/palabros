@@ -8,7 +8,7 @@ jobs:
   test-code:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
       - name: Set up Python
         id: setup-python
@@ -31,8 +31,6 @@ jobs:
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction --no-root
-      - name: Install library
-        run: poetry install --no-interaction
       - name: Run linter
         run: make lint
       - name: Run tests
