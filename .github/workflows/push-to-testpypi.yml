@@ -9,7 +9,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Build and publish to PyPI
+      - name: Set package version
+        run: |
+          VERSION="$(grep -Po '^version\s*\=\s*\"\K\d+\.\d+\.\d+' ./pyproject.toml)-$(git rev-parse --short HEAD)"
+          sed -E -i 's/^(__version__\s*\=\s*\")[^"]*/\1'"$VERSION"'/g' __init__.py
+          sed -E -i 's/^(version\s*\=\s*\")[^"]*/\1'"$VERSION"'/g' pyproject.toml
+      - name: Build and publish to TestPyPI
         uses: JRubics/poetry-publish@v1.10
         with:
           python_version: "3.8.5"
