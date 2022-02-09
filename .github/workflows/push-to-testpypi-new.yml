@@ -11,8 +11,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Get commit hash
         run: |
-          export COMMIT_SHORT_SHA=$(git rev-parse --short HEAD)
-          echo "::set-env name=COMMIT_SHORT_SHA::$COMMIT_SHORT_SHA"
+          echo "$(git rev-parse --short HEAD)" >> $COMMIT_SHORT_SHA
       - name: Build and publish to TestPyPI
         uses: ./.github/actions/poetry-publish
         with:
@@ -22,4 +21,4 @@ jobs:
           repository_name: "testpypi"
           repository_url: "https://test.pypi.org/legacy/"
           build_format: "wheel"
-          sdfsdfsdf: ${{env.API_KEY}}
+          build_metadata: ${{ env.COMMIT_SHORT_SHA }}
