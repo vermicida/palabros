@@ -1,0 +1,25 @@
+name: Push to TestPyPI
+on:
+  push:
+    branches:
+      - 'feature/**'
+jobs:
+  build-then-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Get commit hash
+        run: |
+          export COMMIT_SHORT_SHA=$(git rev-parse --short HEAD)
+          echo "::set-env name=COMMIT_SHORT_SHA::$COMMIT_SHORT_SHA"
+      - name: Build and publish to TestPyPI
+        uses: ./.github/actions/poetry-publish
+        with:
+          python_version: "3.8.5"
+          poetry_version: "==1.1.11"
+          pypi_token: ${{ secrets.TESTPYPI_TOKEN }}
+          repository_name: "testpypi"
+          repository_url: "https://test.pypi.org/legacy/"
+          build_format: "wheel"
+          sdfsdfsdf: ${{env.API_KEY}}
