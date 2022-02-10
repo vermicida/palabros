@@ -181,4 +181,4 @@ if __name__ == "__main__":
     if len(sys.argv) != 3:
         exit(message="Usage: ./entrypoint.sh [repository] [token]", status=4)
     publish(sys.argv[1], sys.argv[2])
-    exit(message="Done!", status=0)
+    exit(status=0)
