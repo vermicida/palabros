@@ -9,16 +9,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Get commit hash
-        run: |
-          echo "COMMIT_SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       - name: Build and publish to TestPyPI
-        uses: ./.github/actions/poetry-publish
+        uses: ./.github/actions/poetry-pypi
         with:
-          python_version: "3.8.5"
-          poetry_version: "==1.1.11"
-          pypi_token: ${{ secrets.TESTPYPI_TOKEN }}
-          repository_name: "testpypi"
-          repository_url: "https://test.pypi.org/legacy/"
-          build_format: "wheel"
-          build_metadata: ${{ env.COMMIT_SHORT_SHA }}
+          repository: "testpypi"
+          token: ${{ secrets.TESTPYPI_TOKEN }}
