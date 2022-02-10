@@ -1,4 +1,5 @@
 import json
+import os
 import sqlite3
 from contextlib import contextmanager
 from pathlib import Path
@@ -27,7 +28,10 @@ def db_cursor() -> Generator[sqlite3.Cursor, None, None]:
     """
 
     try:
-        with sqlite3.connect(str(_DB_PATH), isolation_level=None) as conn:
+        with sqlite3.connect(
+            os.getenv("PALABROS_DB_PATH", str(_DB_PATH)),
+            isolation_level=None,
+        ) as conn:
             conn.row_factory = sqlite3.Row
             cur = conn.cursor()
             yield cur

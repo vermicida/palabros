@@ -1,4 +1,4 @@
 [flake8]
 extend-ignore = E501, E203
-exclude = build, dist, .git, .tox, tests, venv, .venv, .pyenv, docs, examples, .poetry, .pip-installation
+exclude = build, dist, .git, .tox, tests, venv, .venv, .pyenv, .poetry, .pip-installation
 max-line-length = 119

@@ -1,16 +1,16 @@
-name: Push to PyPI
+name: Push to TestPyPI
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches:
+      - develop
 jobs:
   build-then-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Build and publish to PyPI
+      - name: Build and publish to TestPyPI
         uses: ./.github/actions/poetry-pypi
         with:
-          repository: "pypi"
-          token: ${{ secrets.PYPI_TOKEN }}
+          repository: "testpypi"
+          token: ${{ secrets.TESTPYPI_TOKEN }}
