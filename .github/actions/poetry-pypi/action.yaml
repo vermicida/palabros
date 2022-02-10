@@ -1,0 +1,19 @@
+name: "Build & Publish using Poetry"
+author: "vermicida"
+description: "An action to build and publish Python packages using Poetry"
+branding:
+  icon: "package"
+  color: "gray-dark"
+inputs:
+  repository:
+    description: "Repository in which the package will be published: pypi or testpypi"
+    required: true
+  token:
+    description: "Token to authenticate the package publishing to PyPI or TestPyPI"
+    required: true
+runs:
+  using: "docker"
+  image: "docker://vermicida/poetry-pypi:latest"
+  args:
+    - ${{ inputs.repository }}
+    - ${{ inputs.token }}
