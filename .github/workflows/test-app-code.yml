@@ -1,12 +1,9 @@
 name: Test app code
 on:
-  # pull_request:
-  #   branches:
-  #     - develop
-  #     - master
-  push:
+  pull_request:
     branches:
-      - 'feature/**'
+      - develop
+      - master
 jobs:
   test-code:
     runs-on: ubuntu-latest
