@@ -1,0 +1,23 @@
+name: "Test application using Poetry"
+author: "vermicida"
+description: "An action to test Python applications using Poetry"
+branding:
+  icon: "package"
+  color: "gray-dark"
+inputs:
+  lint:
+    description: "Whether or not to run the linter"
+    required: true
+  test:
+    description: "Whether or not to run the unit tests"
+    required: true
+  coverage:
+    description: "Whether or not to run the coverage tests"
+    required: true
+runs:
+  using: "docker"
+  image: "docker://vermicida/poetry-tests:latest"
+  args:
+    - ${{ inputs.lint }}
+    - ${{ inputs.test }}
+    - ${{ inputs.coverage }}

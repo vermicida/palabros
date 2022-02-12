@@ -1,4 +1,4 @@
-FROM python:slim AS base
+FROM python:slim
 
 RUN \
     pip install poetry==1.1.11 \
