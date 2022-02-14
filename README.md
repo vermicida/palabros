@@ -4,7 +4,10 @@ Esto no es más que un CLI inspirado en [Wordle ES](https://wordle.danielfrg.com
 
 ![palabros screenshot](https://rawcdn.githack.com/vermicida/palabros/4ab0e73a58113195ca8c4e71698ceb832388f01d/assets/screenshot.png)
 
-Puedes leer el artículo [Creando un Wordle para consola](https://medium.com/@vermicida/creando-un-wordle-para-consola-b284a6ad10a0) de Medium para conocer con algo más de detalle cómo planteé el desarrollo de **palabros**.
+Puedes leer los siguientes artículos de Medium para conocer en detalle cómo planteé el desarrollo de **palabros**:
+
+- [Creando un Wordle para consola](https://medium.com/@vermicida/creando-un-wordle-para-consola-b284a6ad10a0)
+- [Pintando de Ops mi clon de Wordle](https://medium.com/@vermicida/pintando-de-ops-mi-clon-de-wordle-a1b769ceb041)
 
 ## Cómo jugar
 
